@@ -4,6 +4,6 @@ Sample scene files to use with [mitsuba-renderer]
 
 # mitsuba-renderer
 
-## sample.xml
+## simple studio
 
 ![simple studio](https://beautyandsimulations.contennt.com/images/rendered/sample.png)
