@@ -1,0 +1,4 @@
+images/
+*.log
+
+.DS_Store
