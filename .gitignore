@@ -1,4 +1,5 @@
 images/
 *.log
+*.sif
 
 .DS_Store

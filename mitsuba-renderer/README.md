@@ -1,11 +1,6 @@
 # Docker
 
 ```sh
-docker container run --rm -ti -v $(pwd):/home/mitsuba mitsuba-renderer bash render.sh
-```
- or
-
-```sh
 docker container run --rm -ti -v $(pwd):/home/mitsuba mitsuba-renderer
 ```
 
