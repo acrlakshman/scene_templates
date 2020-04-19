@@ -14,6 +14,18 @@ export PATH=/usr/local/go/bin:$PATH
 
 echo "Installing singularity"
 
+sudo apt-get update && sudo apt-get install -y \
+    build-essential \
+    libssl-dev \
+    uuid-dev \
+    libgpgme11-dev \
+    squashfs-tools \
+    libseccomp-dev \
+    wget \
+    pkg-config \
+    git \
+    cryptsetup
+
 export VERSION=3.5.3 && \
 	wget https://github.com/sylabs/singularity/releases/download/v$VERSION/singularity-$VERSION.tar.gz && \
 	tar -xzf singularity-$VERSION.tar.gz && \
@@ -22,4 +34,4 @@ export VERSION=3.5.3 && \
 	make -C builddir && \
 	sudo make -C builddir install && \
 	cd .. && rm singularity-$VERSION.tar.gz && \
-	rm -r singularity && go version
+	rm -r singularity
