@@ -2,11 +2,12 @@ echo "Installing go"
 
 export VERSION=1.14.2 OS=linux ARCH=amd64 && \
 	wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz && \
-	sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz && \
+	mkdir -p $HOME/.local && \
+	tar -C $HOME/.local -xzvf go$VERSION.$OS-$ARCH.tar.gz && \
 	rm go$VERSION.$OS-$ARCH.tar.gz
 
-echo 'export PATH=/usr/local/go/bin:$PATH' >> ~/.bashrc
-export PATH=/usr/local/go/bin:$PATH
+echo 'export PATH=$HOME/.local/go/bin:$PATH' >> ~/.bashrc
+export PATH=$HOME/.local/go/bin:$PATH
 
 echo "Installing singularity"
 

@@ -1,1 +1,1 @@
-render_sample.sh
+bash render_sample.sh
