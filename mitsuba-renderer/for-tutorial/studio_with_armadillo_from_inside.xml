@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene version="0.6.0">
+    <integrator type="volpath">
+        <integer name="maxDepth" value="20" />
+    </integrator>
+
+    <sensor type="perspective">
+        <float name="focusDistance" value="10000"/>
+        <float name="fov" value="100"/>
+        <string name="fovAxis" value="x"/>
+        <transform name="toWorld">
+            <lookat target="0.0 0.3 0.25" origin="0.0 0.3 0.75" up="0 1 0"/>
+        </transform>
+
+        <sampler type="stratified">
+            <integer name="dimension" value="6"/>
+            <integer name="sampleCount" value="64"/>
+        </sampler>
+
+        <film type="ldrfilm">
+            <float name="exposure" value="0"/>
+            <float name="gamma" value="-1"/>
+            <integer name="width" value="1920"/>
+            <integer name="height" value="1080"/>
+            <string name="pixelFormat" value="rgb"/>
+            <string name="toneMappingMethod" value="gamma"/>
+            <string name="tonemapMethod" value="gamma"/>
+            <rfilter type="catmullrom"/>
+        </film>
+    </sensor>
+
+    <!-- Stanford armadillo -->
+    <shape type="ply" id="armadillo">
+        <string name="filename" value="./models/armadillo.ply" />
+         <transform name="toWorld">
+             <rotate y="1" angle="180"/>
+             <scale x="0.003" y="0.003" z="0.004"/>
+             <translate x="0.0" y="0.165" z="0.0" />
+         </transform>
+        <bsdf type="roughplastic">
+            <rgb name="diffuseReflectance" value="0.2, 0.2, 0.2" />
+        </bsdf>
+    </shape>
+
+    <!-- Studio -->
+    <!-- topWall -->
+    <shape type="rectangle" id="topwall">
+        <transform name="toWorld">
+            <rotate x="1" angle="90" />
+            <translate x="0." y="1." z="0." />
+        </transform>
+        <emitter type="area" id="areaEmitterTop">
+            <spectrum name="radiance" value="1.0" />
+        </emitter>
+    </shape>
+
+    <!-- floor -->
+    <shape type="rectangle" id="floor">
+        <transform name="toWorld">
+            <scale x="1" y="1" z="1"/>
+            <rotate x="1" angle="-90" />
+            <translate x="0." y="0.0" z="0.0" />
+        </transform>
+        <bsdf type="diffuse">
+            <rgb name="diffuseReflectance" value="1., 1., 1." />
+        </bsdf>
+    </shape>
+
+    <!-- backWall -->
+    <shape type="rectangle" id="backwall">
+        <transform name="toWorld">
+            <translate x="0." y="0." z="-1." />
+        </transform>
+        <bsdf type="diffuse">
+            <rgb name="diffuseReflectance" value="0.8, 0.75, 0.8" />
+        </bsdf>
+    </shape>
+
+    <!-- frontWall -->
+    <shape type="rectangle" id="frontwall">
+        <transform name="toWorld">
+            <rotate y="1" angle="180" />
+            <translate x="0." y="0." z="1." />
+        </transform>
+        <bsdf type="diffuse">
+            <rgb name="diffuseReflectance" value="0.8, 0.75, 0.8" />
+        </bsdf>
+    </shape>
+    <shape type="rectangle" id="rightwall">
+        <transform name="toWorld">
+            <rotate y="1" angle="90" />
+            <translate x="-1." y="0." z="0." />
+        </transform>
+        <bsdf type="diffuse">
+            <rgb name="diffuseReflectance" value="0.8, 0.0, 0.0" />
+        </bsdf>
+    </shape>
+    <shape type="rectangle" id="leftwall">
+        <transform name="toWorld">
+            <rotate y="1" angle="-90" />
+            <translate x="1." y="0." z="0." />
+        </transform>
+        <bsdf type="diffuse">
+            <rgb name="diffuseReflectance" value="0.0, 0.8, 0.0" />
+        </bsdf>
+    </shape>
+
+    <!-- Axes -->
+    <shape type="obj" id="axisX">
+        <string name="filename" value="./models/arrow.obj" />
+        <bsdf type="roughplastic">
+            <rgb name="diffuseReflectance" value="1.0, 0.0, 0.0" />
+        </bsdf>
+    </shape>
+    <shape type="obj" id="axisY">
+        <string name="filename" value="./models/arrow.obj" />
+        <transform name="toWorld">
+            <rotate z="1" angle="90" />
+        </transform>
+        <bsdf type="roughplastic">
+            <rgb name="diffuseReflectance" value="0.0, 1.0, 0.0" />
+        </bsdf>
+    </shape>
+    <shape type="obj" id="axisZ">
+        <string name="filename" value="./models/arrow.obj" />
+        <transform name="toWorld">
+            <rotate y="1" angle="270" />
+        </transform>
+        <bsdf type="roughplastic">
+            <rgb name="diffuseReflectance" value="0.0, 0.0, 1.0" />
+        </bsdf>
+    </shape>
+</scene>

@@ -15,7 +15,7 @@
 
         <sampler type="stratified">
             <integer name="dimension" value="6"/>
-            <integer name="sampleCount" value="20"/>
+            <integer name="sampleCount" value="25"/>
         </sampler>
 
         <film type="ldrfilm">

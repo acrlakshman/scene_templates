@@ -1,6 +1,9 @@
+surfaces/
 images/
+
 *.log
 *.sif
 *.tar.gz*
+*.zip
 
 .DS_Store

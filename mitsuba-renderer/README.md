@@ -26,6 +26,8 @@ docker container run --rm -v C:\<path-to-scene_templates>\scene_templates\mitsub
 
 # Results
 
-## sample.xml
+## studio
 
-![simple studio](https://beautyandsimulations.contennt.com/images/rendered/sample.png)
+* Scene file: studio.xml
+* `bash run_singularity.sh`
+  ![studio](https://beautyandsimulations.contennt.com/images/rendered/studio.png)
