@@ -1,3 +1,5 @@
+This is a tutorial for updating a repository with bash command. 
+
 # Linux or Mac
 
 ## Docker
