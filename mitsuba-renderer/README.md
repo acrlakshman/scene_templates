@@ -30,4 +30,4 @@ docker container run --rm -v C:\<path-to-scene_templates>\scene_templates\mitsub
 
 * Scene file: studio.xml
 * `bash run_singularity.sh`
-  ![studio](https://beautyandsimulations.contennt.com/images/rendered/studio.png)
+  ![studio](https://beautyandsimulations.lakshmananumolu.com/images/rendered/studio.png)
