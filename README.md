@@ -1,3 +1,5 @@
+## Development is moved to https://github.com/acrlakshman/cfd-scene-renderer
+
 ![readme](./assets/readme.png)
 
 # scene_templates
